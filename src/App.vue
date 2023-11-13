@@ -2,8 +2,6 @@
     import NavComponent from '@/components/NavComponent.vue'
     import HeaderComponent from '@/components/HeaderComponent.vue'
     import FooterComponent from '@/components/FooterComponent.vue'
-    import AboutComponent from '@/components/AboutComponent.vue'
-    import CardComponent from '@/components/CardComponent.vue'
     
     export default {
         data() {
@@ -60,8 +58,6 @@
             NavComponent,
             HeaderComponent,
             FooterComponent,
-            AboutComponent,
-            CardComponent
         }
     }
 </script>
@@ -72,16 +68,8 @@
         :mainTitle="mainTitle" 
         :subTitle="subTitle"
     />
-    <AboutComponent/>
-    
-    <section class="gallery">
-        <div class="cards-wrapper">
-            <CardComponent v-for="product in products" 
-            v-bind:key="product.id" 
-            v-bind:product="product" 
-            />
-        </div>
-    </section>
+
+    <router-view></router-view>
 
     <FooterComponent
         :mainTitle="mainTitle" 
